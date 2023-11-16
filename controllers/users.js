@@ -48,6 +48,7 @@ module.exports = {
         message: "Data berhasil ditambahkan",
       });
     } catch (error) {
+      console.log(error);
       res.status(400).json({ sucess: false });
     }
   },
@@ -78,7 +79,8 @@ module.exports = {
         message: "Data berhasil dihapus",
       });
     } catch (error) {
-      res.status(400).json({ sucess: false });
+      console.log(error);
+      res.status(400).json({ success: false });
     }
   },
 };
