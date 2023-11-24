@@ -34,6 +34,7 @@ module.exports = {
         message: "Data berhasil didapatkan",
       });
     } catch (error) {
+      console.log(error);
       res.status(400).json({ sucess: false });
     }
   },
