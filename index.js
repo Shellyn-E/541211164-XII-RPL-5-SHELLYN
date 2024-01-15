@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const connectDB = require("./config/db");
 const userrouter = require("./router/users");
+const authRoute = require("./router/auth");
 
 const port = 3000;
 
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(userrouter);
+app.use(authRoute);
 
 connectDB();
 

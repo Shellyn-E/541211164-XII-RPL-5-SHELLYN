@@ -1,19 +1,11 @@
 const mongoose = require("mongoose");
 
-const UserSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Silahkan Masukkan Nama!"],
-    unique: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    match: [
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      "Silahkan Isi Email dengan valid!",
-    ],
-  },
+const TableSchema = new mongoose.Schema({
+  username: String,
+  email: String,
+  password: String,
 });
 
-module.exports = mongoose.model("users", UserSchema);
+const Table = mongoose.model("User", TableSchema);
+
+module.exports = Table;

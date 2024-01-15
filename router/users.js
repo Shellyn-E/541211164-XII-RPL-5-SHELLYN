@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 const usercontroller = require("../controllers/users");
+const { verifyToken } = require("../middlewares/authJwt");
 
-router.get("/users", usercontroller.index);
+router.get("/users", [verifyToken], usercontroller.index);
 
 router.get("/user/:id", usercontroller.show);
 
